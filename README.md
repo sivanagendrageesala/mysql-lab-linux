@@ -1,6 +1,7 @@
-# MySQL Lab on Linux – Practical Guide
+# 🐬 MySQL Backup & Restore on Linux
 
-This lab demonstrates essential MySQL database operations on a Linux system. It covers installation validation, database and table creation, data insertion, SQL queries, and backup/restore tasks. Ideal for beginners and system administrators.
+> A practical project that teaches how to create, back up, drop, and restore MySQL databases on Linux. Includes hands-on experience with Git, systemctl, and SQL commands.
+
 
 ---
 
