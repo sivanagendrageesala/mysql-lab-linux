@@ -60,6 +60,7 @@ INSERT INTO employee_department (employee_id, department_id)
 VALUES (1, 2), (2, 2);
 
 ✅ Part 4: Query Data with Joins
+
 sql
 
 SELECT * FROM employees;
