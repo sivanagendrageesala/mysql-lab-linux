@@ -8,25 +8,23 @@ This lab demonstrates essential MySQL database operations on a Linux system. It 
 
 ```bash
 systemctl status mysql | grep active
-Verifies if MySQL is running. Output should include Active: active (running).
+	Verifies if MySQL is running. Output should include Active: active (running).
 
 If it's not running, start it:
 
 bash
-Copy
-Edit
+
 sudo systemctl start mysql
 Connect to MySQL:
 
 bash
-Copy
-Edit
+
 mysql -u sivanagendra -p
 # Password: *****
+
 ✅ Part 2: Create a Database and Tables
+
 sql
-Copy
-Edit
 CREATE DATABASE testdb;
 USE testdb;
 
@@ -49,9 +47,8 @@ CREATE TABLE employee_department (
   FOREIGN KEY (department_id) REFERENCES department(id)
 );
 ✅ Part 3: Insert Data
+
 sql
-Copy
-Edit
 INSERT INTO employees (firstname, lastname, hiredate)
 VALUES ('Jane', 'Doe', '2022-01-15'),
        ('John', 'Doe', '2022-01-31');
@@ -61,10 +58,10 @@ VALUES ('hr'), ('engineering'), ('marketing');
 
 INSERT INTO employee_department (employee_id, department_id)
 VALUES (1, 2), (2, 2);
+
 ✅ Part 4: Query Data with Joins
 sql
-Copy
-Edit
+
 SELECT * FROM employees;
 SELECT * FROM department;
 SELECT * FROM employee_department;
@@ -74,25 +71,23 @@ SELECT e.firstname, e.lastname, d.department_name
 FROM employee_department ed
 JOIN employees e ON ed.employee_id = e.id
 JOIN department d ON ed.department_id = d.id;
+
 ✅ Part 5: Backup and Restore
 Backup:
 
 bash
-Copy
-Edit
+
 exit  # from MySQL
 mysqldump -u sivanagendra -p -B testdb > testdb_backup.sql
+
 Verify:
 
 bash
-Copy
-Edit
+
 ls | grep testdb
 Drop DB and Restore:
 
 sql
-Copy
-Edit
 mysql -u sivanagendra -p
 DROP DATABASE testdb;
 exit
